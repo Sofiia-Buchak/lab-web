@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Бучак Софія</title>
+
+    <!-- СПОСІБ 1: External (Зовнішній файл) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- СПОСІБ 2: Internal (Внутрішні стилі) -->
+    <style>
+        body {
+            /* Світлий, ледь теплий фон для "Creative & Minimal" */
+            background-color: #fbf9f9; 
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Бучак Софія</h1>
+    <header class="hero">
+        <!-- СПОСІБ 3: Inline (Вбудований стиль безпосередньо в тег) -->
+        <h1 style="color: #800020; font-size: 3rem; margin-bottom: 10px;">Бучак Софія</h1>
         <p>Студентка 2-го курсу спеціальності "Кібербезпека" | Фахівчиня-початківець із захисту інформації</p>
     </header>
 
-    <main>
-        <section id="about">
+    <main class="grid-container">
+        <!-- Додано клас "card" до кожної секції для стилізації блоків -->
+        <section id="about" class="card full-width">
             <h2>Про мене</h2>
-            <p>Я студентка другого курсу Національного університету "Львівська політехніка", де активно вивчаю кібербезпеку. </p>
+            <p>Я студентка другого курсу Національного університету "Львівська політехніка", де активно вивчаю кібербезпеку.</p>
             <p>Цікавлюся програмуванням та проєктуванням баз даних. Відкрита до нових знань і готова застосовувати свої навички на практиці.</p>
         </section>
 
-        <section id="education">
+        <section id="education" class="card">
             <h2>Освіта</h2>
             <ul>
                 <li>
@@ -29,16 +42,16 @@
             </ul>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="card">
             <h2>Професійні навички</h2>
             <ul>
                 <li><strong>Python:</strong> Розуміння синтаксису, написання скриптів, робота з модулями та базовими алгоритмами.</li>
-                <li><strong>C#:</strong> Базові знання об'єктно-орієнтованого програмування, створення консольних та простих віконних додатків.</li>
-                <li><strong>Бази даних:</strong> Концептуальне проєктування реляційних баз даних, основи SQL.</li>
+                <li><strong>C#:</strong> Базові знання об'єктно-орієнтованого програмування.</li>
+                <li><strong>Бази даних:</strong> Концептуальне проєктування, основи SQL.</li>
             </ul>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="card full-width">
             <h2>Навчальні проєкти</h2>
             <ol>
                 <li>
