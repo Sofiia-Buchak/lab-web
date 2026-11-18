@@ -1,12 +1,19 @@
-function Header() {
+// Приймаємо пропси з App.jsx
+function Header({ theme, toggleTheme }) {
   return (
-    <header className="flex flex-col items-center justify-center py-16 px-4 bg-white shadow-sm">
-      <h1 className="text-4xl md:text-5xl font-bold text-[#800020] mb-4 tracking-wide text-center">
-        Бучак Софія
-      </h1>
-      <p className="text-lg md:text-xl text-gray-500 text-center max-w-2xl">
+    <header className="flex flex-col items-center text-center py-10 px-5">
+      <h1 className="text-[#800020] text-5xl mb-3 font-bold">Бучак Софія</h1>
+      <p className="text-gray-700 dark:text-gray-300">
         Студентка 2-го курсу спеціальності "Кібербезпека" | Фахівчиня-початківець із захисту інформації
       </p>
+      
+      {/* Кнопка ручного перемикання між режимами[cite: 19, 20] */}
+      <button 
+        onClick={toggleTheme} 
+        className="mt-5 px-5 py-2 bg-[#800020] text-white rounded-full font-bold hover:bg-[#5a0016] dark:bg-gray-200 dark:text-[#121212] dark:hover:bg-white transition-colors shadow-sm"
+      >
+        {theme === 'light' ? '🌙 Нічна тема' : '☀️ Денна тема'}
+      </button>
     </header>
   );
 }

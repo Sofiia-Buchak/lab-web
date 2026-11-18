@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Бучак Софія</title>
 
-    <!-- СПОСІБ 1: External (Зовнішній файл) -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- СПОСІБ 2: Internal (Внутрішні стилі) -->
     <style>
         body {
-            /* Світлий, ледь теплий фон для "Creative & Minimal" */
             background-color: #fbf9f9; 
         }
     </style>
 </head>
 <body>
     <header class="hero">
-        <!-- СПОСІБ 3: Inline (Вбудований стиль безпосередньо в тег) -->
         <h1 style="color: #800020; font-size: 3rem; margin-bottom: 10px;">Бучак Софія</h1>
         <p>Студентка 2-го курсу спеціальності "Кібербезпека" | Фахівчиня-початківець із захисту інформації</p>
+    
+        <button id="theme-toggle" class="theme-btn">🌙 Нічна тема</button>
     </header>
 
     <main class="grid-container">
-        <!-- Додано клас "card" до кожної секції для стилізації блоків -->
         <section id="about" class="card full-width">
             <h2>Про мене</h2>
             <p>Я студентка другого курсу Національного університету "Львівська політехніка", де активно вивчаю кібербезпеку.</p>
@@ -64,6 +61,12 @@
                 </li>
             </ol>
         </section>
+        
+        <section id="reviews" class="card full-width">
+            <h2>Відгуки роботодавців</h2>
+            <div id="reviews-container" style="display: flex; flex-direction: column; gap: 15px;"></div>
+        </section>
+    </main>
     </main>
 
     <footer>
@@ -76,5 +79,37 @@
         </section>
         <p>&copy; 2026 Бучак Софія. Усі права захищено.</p>
     </footer>
+
+    <!-- Модальне вікно зворотного зв'язку -->
+    <div id="feedback-modal" class="modal-overlay">
+        <div class="modal-content card">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 style="margin-top: 0;">Зворотний зв'язок</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Залиште свої контакти, і я з вами зв'яжуся.</p>
+            
+            <!-- Твій персональний ендпойнт Formspree -->
+            <form action="https://formspree.io/f/mljgpyqa" method="POST">
+                <div class="form-group">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефону:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

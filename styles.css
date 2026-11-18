@@ -92,3 +92,206 @@ a[href^="mailto"] {
         padding: 20px 10px;
     }
 }
+
+/* --- ДИНАМІЧНІ БЛОКИ (JavaScript) --- */
+.sys-info-block {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fbf9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sys-info-block strong {
+    color: #800020;
+}
+
+/* --- СТИЛІ ДЛЯ КАРТОК ВІДГУКІВ  --- */
+.review-card {
+    padding: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    border-left: 4px solid #800020; 
+    transition: transform 0.2s ease, background-color 0.3s, border-color 0.3s;
+}
+
+.review-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.review-card a {
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+/* --- СТИЛІ ДЛЯ МОДАЛЬНОГО ВІКНА --- */
+.modal-overlay {
+    display: none; /* Сховано за замовчуванням */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Темне напівпрозоре тло */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px); /* Легке розмиття заднього фону */
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    background-color: #fff;
+    padding: 30px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #800020;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #800020;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #800020;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #5a0016;
+}
+
+/* СТИЛІ ДЛЯ ТЕМНОЇ ТЕМИ (Крок 4) */
+.theme-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #800020;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: #5a0016;
+}
+
+/* Глобальні кольори темної теми */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Перефарбовуємо всі картки, модальне вікно та динамічні блоки */
+body.dark-theme .card,
+body.dark-theme .modal-content,
+body.dark-theme .sys-info-block,
+body.dark-theme .review-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Адаптація акцентних кольорів (повертаємо твій оригінальний бордовий) */
+body.dark-theme h2 {
+    color: #800020;
+    border-bottom-color: #800020;
+}
+
+body.dark-theme .sys-info-block strong { color: #800020; }
+body.dark-theme .review-card h3 { color: #e0e0e0; }
+body.dark-theme .review-card a { color: #aaa; }
+body.dark-theme .review-card a:hover { color: #800020; }
+
+/* Інші елементи */
+body.dark-theme a[href^="mailto"] { color: #aaa; }
+body.dark-theme .form-group label { color: #ddd; }
+
+body.dark-theme .form-group input, 
+body.dark-theme .form-group textarea {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+/* Інверсія кольорів самої кнопки в темній темі */
+body.dark-theme .theme-btn {
+    background-color: #e0e0e0;
+    color: #121212;
+}
+
+body.dark-theme .theme-btn:hover {
+    background-color: #fff;
+}
